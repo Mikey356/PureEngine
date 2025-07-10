@@ -1,0 +1,7 @@
+C:\GraphicsProgramming\PureEngine\3rdParties\glad\src\glad.c;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\glad.obj
+C:\GraphicsProgramming\PureEngine\3rdParties\glm\glm\detail\glm.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\glm.obj
+C:\GraphicsProgramming\PureEngine\Source\Camera\Camera.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\Camera.obj
+C:\GraphicsProgramming\PureEngine\Source\Input\Input.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\Input.obj
+C:\GraphicsProgramming\PureEngine\Source\Main.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\Main.obj
+C:\GraphicsProgramming\PureEngine\Source\Renderer\Renderer.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\Renderer.obj
+C:\GraphicsProgramming\PureEngine\Source\Shader\Shader.cpp;C:\GraphicsProgramming\PureEngine\PureEngine\x64\Debug\Shader.obj
