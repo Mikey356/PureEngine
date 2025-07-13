@@ -243,7 +243,7 @@ void ComputeShader::CheckCompileErrors(GLuint shader, std::string type)
 	}
 }
 
-void ComputeShader::Use()
+void ComputeShader::Use() const 
 {
 	glUseProgram(m_ID);
 }
