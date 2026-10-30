@@ -1,0 +1,12 @@
+newmtl default
+Kd 1 1 1
+d 1
+Ke 1 1 1
+illum 2
+map_Kd images/default_albedo.jpg
+map_Bump images/default_normal.jpg
+map_Ke images/default_emissive.jpg
+Ks 0.5 0.5 0.5
+Ns 0
+map_Ns images/default_roughness.jpg
+
