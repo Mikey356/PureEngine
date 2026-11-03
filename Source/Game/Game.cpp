@@ -9,7 +9,7 @@ namespace Game
 
 	void Init()
 	{
-		glm::vec3 position(0.0f, 0.0f, 3.0f);
+		glm::vec3 position(0.0f, 0.0f, 0.0f);
 		glm::vec3 rotation(0.0f, 0.0f, 0.0f);
 		g_player.Init(position, rotation);
 	}

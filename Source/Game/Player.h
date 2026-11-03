@@ -7,7 +7,9 @@ struct Player
 	void Init(const glm::vec3& initialPosition, const glm::vec3& initialRotation);
 	void Update(float deltaTime);
 	void SetPosition(const glm::vec3& positon);
+	void SetPosition(const float x, const float y, const float z);
 	void SetRotation(const glm::vec3& rotation);
+	void SetRotation(const float x, const float y, const float z);
 
 	const glm::vec3& GetPosition() { return m_position; }
 	const glm::vec3& GetRotation() { return m_rotation; }

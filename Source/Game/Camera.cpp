@@ -3,11 +3,9 @@
 #include <glm/gtc/quaternion.hpp>
 void Camera::Update()
 {
-	// temp model matrix
-	glm::mat4 tempIdentityMat = glm::mat4(1.0f);
 
 	// to transform to view space
-	glm::mat4 transMat = glm::translate(tempIdentityMat, m_position);
+	glm::mat4 transMat = glm::translate(glm::mat4(1.0f), m_position);
 
 	transMat *= glm::mat4_cast(glm::quat(m_rotation));
 	m_inverseViewMatrix = transMat;

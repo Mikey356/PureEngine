@@ -26,8 +26,8 @@ void Model::Load(const std::string& path)
         std::vector<Vertex> vertices;
         std::vector<uint32_t> indices;
 
-        vertices.reserve(99999);
-        indices.reserve(99999);
+        vertices.reserve(shape.mesh.indices.size());
+        indices.reserve(shape.mesh.indices.size());
 
         // Loop over faces
         size_t index_offset = 0;
@@ -74,9 +74,7 @@ void Model::Load(const std::string& path)
            
         }
         
-        std::cout << "-vertices: " << vertices.size() << std::endl;
-        std::cout << "-indices: " << indices.size() << std::endl;
-             
+   
         Mesh& mesh = m_meshes.emplace_back();
         mesh.Create(vertices, indices);
         mesh.Upload();

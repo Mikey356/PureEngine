@@ -37,3 +37,14 @@ void Player::Update(float deltaTime)
 void Player::SetPosition(const glm::vec3& position) {
 	m_position = position;
 }
+
+void Player::SetPosition(const float x, const float y, const float z) {
+	m_position = glm::vec3(x, y, z);
+}
+
+void Player::SetRotation(const float x, const float y, const float z) {
+	m_rotation = glm::vec3(x, y, z);
+}
+void Player::SetRotation(const glm::vec3& rotation) {
+	m_rotation = rotation;
+}
