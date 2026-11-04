@@ -18,12 +18,12 @@ float GetAttenuation(vec3 lightPos, vec3 fragPos, float lightRadius)
 
 void main()
 {
-	vec3 lightPos = vec3(-1, 1, -0.5);
+	vec3 lightPos = vec3(-1, 1, -1);
 	vec3 L = normalize(lightPos - v_worldPos);
 	vec3 N = normalize(v_normal);
 	float ndotl = dot(N, L);
 	vec3 lightColor = vec3(0.5f, 0.0f, 0.0f);
-	float lightIntensity = 2000;
+	float lightIntensity = 2;
 	float lightRadius = 10.0;
 
 	mat4 inverseView = inverse(u_view);
@@ -36,13 +36,13 @@ void main()
 	vec3 diffuse = vec3(ndotl * attenuation * lightIntensity) * lightColor;	
 	
 	// Specular
-	float specIntensity = 10.5f;
+	float specIntensity = 1.5;
 	vec3 viewDir = normalize(viewPos - v_worldPos);
 	vec3 reflectDir = reflect(-L, N);
 	float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
 	vec3 specular = specIntensity * spec *  lightColor;
 
 	// final fragment output
-	vec3 lighting = diffuse * specular;
-	FragColor = vec4(vec3(specular), 1.0);
+	vec3 lighting = (diffuse + specular) * attenuation;
+	FragColor = vec4(vec3(lighting), 1.0);
 }

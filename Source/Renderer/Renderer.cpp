@@ -38,7 +38,6 @@ namespace Renderer
 		CreateModel("Mech", "Resources/Models/Mech.obj");
 		CreateShader("QuadShader", "Resources/Shaders/quad.vert", "Resources/Shaders/quad.frag");
 		
-		
 	}
 
 	void RenderFrame()
@@ -58,14 +57,11 @@ namespace Renderer
 		glm::mat4 view = camera.GetViewMatrix();
 
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f));
 		quadShader->Activate();
 		quadShader->SetMat4("u_projection", projection);
 		quadShader->SetMat4("u_view", view);
 		quadShader->SetMat4("u_model", model);
-		std::cout << "Player x-position: " << g_player.GetPosition().x << '\n';
-		std::cout << "Player y-position: " << g_player.GetPosition().y << '\n';
-		std::cout << "Player z-position: " << g_player.GetPosition().z << '\n';
+	
 		for (Mesh& mesh : model2->m_meshes)
 		{
 			glBindVertexArray(mesh.m_vao);
