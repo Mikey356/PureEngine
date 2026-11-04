@@ -14,10 +14,10 @@ int main()
 	while (!Backend::WindowShouldClose())
 	{
 		HotKeys();
-		Renderer::RenderFrame();		
 		Backend::BeginFrame();
 		Game::Update();
 		Backend::EndFrame();
+		Renderer::RenderFrame();		
 		
 	}
 	Renderer::Cleanup();
