@@ -3,7 +3,7 @@
 #include "Backend/Backend.h"
 #include "Game/Game.h"
 #include "Types/constants.h"
-#include "Types/Model.h"
+#include "AssetManager/Model.h"
 #include <glad/glad.h>
 #include <glm/gtc/matrix_transform.hpp>
 #include <iostream>
@@ -16,18 +16,18 @@ namespace Renderer
 	Player& g_player = Game::GetPlayer();
 	std::unordered_map<std::string, Shader> g_shaders;
 	std::unordered_map<std::string, Model> g_models;
-
+	
 	void CreateShader(const std::string& name, const std::string& vertPath, const std::string& fragPath);
 	void CreateModel(const std::string& name, const std::string& path);
 	void CreateModel(const std::string& name, const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices);
 	Shader* GetShader(const std::string& name);
 	Model* GetModel(const std::string& name);
-
+	
 	void Init()
 	{
 		glEnable(GL_DEPTH_TEST);
 		std::vector<Vertex> vertices;
-
+	
 		vertices.emplace_back(Vertex(0.5f, 0.5f, 0.0f));
 		vertices.emplace_back(Vertex(0.5f, -0.5f, 0.0f));
 		vertices.emplace_back(Vertex(-0.5f, -0.5f, 0.0f));
@@ -36,17 +36,19 @@ namespace Renderer
 		std::vector<uint32_t> indices = { 0, 1, 3, 1, 2, 3 };
 
 		CreateModel("Mech", "Resources/Models/Mech.obj");
+		CreateModel("Backpack", "Resources/Models/backpack/backpack.obj");
 		CreateShader("QuadShader", "Resources/Shaders/quad.vert", "Resources/Shaders/quad.frag");
 		
 	}
 
 	void RenderFrame()
 	{
-		Model* model2 = GetModel("Mech");
+		//Model* model1 = GetModel("Mech");
+		Model* model2 = GetModel("Backpack");
 		Shader* quadShader = GetShader("QuadShader");
 		if (!quadShader) return;
+		//if (!model1) return;
 		if (!model2) return;
-
 		// Clear framebuffer
 		glClearColor(0.4, 0.3, 2, 1.0);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -55,13 +57,22 @@ namespace Renderer
 		Camera& camera = g_player.GetCamera();
 		glm::mat4 projection = glm::perspective(glm::radians(PURE_FOV), (float)Backend::GetCurrentWindowWidth() / Backend::GetCurrentWindowHeight(), PURE_NEAR_PLANE, PURE_FAR_PLANE);
 		glm::mat4 view = camera.GetViewMatrix();
-
-		glm::mat4 model = glm::mat4(1.0f);
 		quadShader->Activate();
 		quadShader->SetMat4("u_projection", projection);
 		quadShader->SetMat4("u_view", view);
-		quadShader->SetMat4("u_model", model);
+
+		
+		Transform transform;
 	
+		transform.scale = glm::vec3(.5f);
+		quadShader->SetMat4("u_model", transform.ToMat4());
+		
+	/*	for (Mesh& mesh : model1->m_meshes)
+		{
+			glBindVertexArray(mesh.m_vao);
+			glDrawElements(GL_TRIANGLES, mesh.GetIndexCount(), GL_UNSIGNED_INT, 0);
+		}*/
+
 		for (Mesh& mesh : model2->m_meshes)
 		{
 			glBindVertexArray(mesh.m_vao);

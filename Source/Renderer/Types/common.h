@@ -11,12 +11,12 @@ struct Vertex
 	Vertex() = default;
 	// for primitive
 	Vertex(float x, float y, float z) {
-		m_position = glm::vec3(x, y, z);
+		position = glm::vec3(x, y, z);
 	}
-	glm::vec3 m_position;
-	glm::vec3 m_normal;
-	glm::vec2 m_uvs;
-	glm::vec3 m_tangent;
+	glm::vec3 position;
+	glm::vec3 normal;
+	glm::vec2 uvs;
+	glm::vec3 tangent;
 };
 
 struct Transform

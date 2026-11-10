@@ -13,7 +13,8 @@ uniform mat4 u_view;
 uniform mat4 u_model;
 void main()
 {
-	v_worldPos = attrib_pos;
+	vec4 worldPosition = u_model * vec4(attrib_pos,1.0f);
+	v_worldPos = worldPosition.xyz;
 	v_normal = attrib_normal;
-	gl_Position = u_projection * u_view * u_model * vec4(v_worldPos, 1.0f);
+	gl_Position = u_projection * u_view * u_model * worldPosition;
 }

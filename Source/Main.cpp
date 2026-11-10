@@ -17,9 +17,10 @@ int main()
 		Backend::BeginFrame();
 		Game::Update();
 		Backend::EndFrame();
-		Renderer::RenderFrame();		
+		Renderer::RenderFrame();
 		
 	}
+
 	Renderer::Cleanup();
 	Backend::Cleanup();
 	return 0; 

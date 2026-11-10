@@ -50,28 +50,32 @@ void Model::Load(const std::string& path)
                 Vertex& vertex = vertices.emplace_back();
 
                 // Positions
-                vertex.m_position.x = attrib.vertices[3 * size_t(idx.vertex_index) + 0];
-                vertex.m_position.y = attrib.vertices[3 * size_t(idx.vertex_index) + 1];
-                vertex.m_position.z = attrib.vertices[3 * size_t(idx.vertex_index) + 2];
+                vertex.position.x = attrib.vertices[3 * size_t(idx.vertex_index) + 0];
+                vertex.position.y = attrib.vertices[3 * size_t(idx.vertex_index) + 1];
+                vertex.position.z = attrib.vertices[3 * size_t(idx.vertex_index) + 2];
 
                 // Normals
                 if (idx.normal_index >= 0)
                 {
-                   vertex.m_normal.x = attrib.normals[3 * size_t(idx.normal_index) + 0];
-                   vertex.m_normal.y = attrib.normals[3 * size_t(idx.normal_index) + 1];
-                   vertex.m_normal.z = attrib.normals[3 * size_t(idx.normal_index) + 2];
+                   vertex.normal.x = attrib.normals[3 * size_t(idx.normal_index) + 0];
+                   vertex.normal.y = attrib.normals[3 * size_t(idx.normal_index) + 1];
+                   vertex.normal.z = attrib.normals[3 * size_t(idx.normal_index) + 2];
                 }
 
                 // UVs
                 if (idx.texcoord_index >= 0) 
                 {
-                    vertex.m_uvs.x = attrib.texcoords[2 * size_t(idx.texcoord_index) + 0];
-                    vertex.m_uvs.y = attrib.texcoords[2 * size_t(idx.texcoord_index) + 1];
+                    vertex.uvs.x = attrib.texcoords[2 * size_t(idx.texcoord_index) + 0];
+                    vertex.uvs.y = attrib.texcoords[2 * size_t(idx.texcoord_index) + 1];
                 }
             }
            
             index_offset += vertCount;
-           
+            //tinyobj material
+            shape.mesh.material_ids[f];
+       
+            // maybe this works for the materials idk
+            /*shapes[f].mesh.material_ids[f];*/
         }
         
    

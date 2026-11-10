@@ -42,16 +42,19 @@
     <ClCompile Include="Source\Game\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Renderer\Types\Mesh.cpp">
+    <ClCompile Include="Source\AssetManager\Mesh.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Renderer\Types\Model.cpp">
+    <ClCompile Include="Source\AssetManager\Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\AssetManager\AssetManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Renderer\Types\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Outcasts\stb_image\stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,10 +98,10 @@
     <ClInclude Include="Source\Types\constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Renderer\Types\Mesh.h">
+    <ClInclude Include="Source\AssetManager\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Renderer\Types\Model.h">
+    <ClInclude Include="Source\AssetManager\Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\AssetManager\AssetManager.h">

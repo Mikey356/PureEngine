@@ -1,10 +1,10 @@
 #pragma once
-#include "common.h"
+#include "Renderer/Types/common.h"
 #include <vector>
 
 struct Mesh
 {
-	void Create(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices);
+	void Create(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices, );
 	void Upload();
 	void Cleanup();
 	

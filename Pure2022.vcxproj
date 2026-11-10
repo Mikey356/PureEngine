@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Outcasts\glad\src\glad.c" />
+    <ClCompile Include="Outcasts\stb_image\stb_image.cpp" />
     <ClCompile Include="Source\AssetManager\AssetManager.cpp" />
     <ClCompile Include="Source\Backend\Backend.cpp" />
     <ClCompile Include="Source\Game\Camera.cpp" />
@@ -21,8 +22,8 @@
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\OpenGL\Essentials\Shader.cpp" />
     <ClCompile Include="Source\Renderer\Renderer.cpp" />
-    <ClCompile Include="Source\Renderer\Types\Mesh.cpp" />
-    <ClCompile Include="Source\Renderer\Types\Model.cpp" />
+    <ClCompile Include="Source\AssetManager\Mesh.cpp" />
+    <ClCompile Include="Source\AssetManager\Model.cpp" />
     <ClCompile Include="Source\Renderer\Types\Texture.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -39,8 +40,8 @@
     <ClInclude Include="Source\Input\keycodes.h" />
     <ClInclude Include="Source\OpenGL\Essentials\Shader.h" />
     <ClInclude Include="Source\Renderer\Renderer.h" />
-    <ClInclude Include="Source\Renderer\Types\Mesh.h" />
-    <ClInclude Include="Source\Renderer\Types\Model.h" />
+    <ClInclude Include="Source\AssetManager\Mesh.h" />
+    <ClInclude Include="Source\AssetManager\Model.h" />
     <ClInclude Include="Source\Renderer\Types\Texture.h" />
     <ClInclude Include="Source\Types\constants.h" />
   </ItemGroup>

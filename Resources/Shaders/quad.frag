@@ -22,8 +22,8 @@ void main()
 	vec3 L = normalize(lightPos - v_worldPos);
 	vec3 N = normalize(v_normal);
 	
-	vec3 lightColor = vec3(.50196078431372549019607843137255, .0, .0);
-	float lightIntensity = 1;
+	vec3 lightColor = vec3(1, .0, .0);
+	float lightIntensity = .7;
 	float lightRadius = 10.0;
 	
 	float dist = distance(lightPos, v_worldPos);
@@ -46,4 +46,5 @@ void main()
 	// final fragment output
 	vec3 lighting = (diffuse + specular) * attenuation * lightIntensity;
 	FragColor = vec4(vec3(lighting), 1.0);
+	
 }
