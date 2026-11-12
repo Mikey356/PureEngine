@@ -10,7 +10,7 @@ struct Texture
 	const std::string& GetTextureByName() const { return m_name; }
 	const std::string& GetTextureByType() const { return m_type; }
 	const std::string& GetTexturePath() const { return m_path; }
-
+	
 private:
 	uint32_t m_handle;
 	std::string m_name;

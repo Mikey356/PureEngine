@@ -73,7 +73,12 @@ void Model::Load(const std::string& path)
             index_offset += vertCount;
             //tinyobj material
             shape.mesh.material_ids[f];
-       
+            tinyobj::material_t mat;
+            mat.diffuse;
+            mat.emission;
+            mat.normal_texname;
+            mat.roughness;
+           
             // maybe this works for the materials idk
             /*shapes[f].mesh.material_ids[f];*/
         }

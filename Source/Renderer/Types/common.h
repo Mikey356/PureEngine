@@ -19,6 +19,16 @@ struct Vertex
 	glm::vec3 tangent;
 };
 
+enum struct TextureType 
+{
+	DIFFUSE, 
+	ROUGHNESS, 
+	EMISSION, 
+	NORMAL,
+	AO,
+	BUMP
+}; 
+
 struct Transform
 {
 	glm::vec3 position = glm::vec3(0.0f);
