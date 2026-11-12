@@ -1,10 +1,10 @@
 #pragma once
 #include "Renderer/Types/common.h"
 #include <vector>
-
+#include <tinyobj_loader.h>
 struct Mesh
 {
-	void Create(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices, );
+	void Create(const std::vector<Vertex>& vertices, const std::vector<uint32_t>& indices, const std::vector<tinyobj::material_t>& materials);
 	void Upload();
 	void Cleanup();
 	

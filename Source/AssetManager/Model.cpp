@@ -25,6 +25,7 @@ void Model::Load(const std::string& path)
     {
         std::vector<Vertex> vertices;
         std::vector<uint32_t> indices;
+        std::vector<tinyobj::material_t> mats;
 
         vertices.reserve(shape.mesh.indices.size());
         indices.reserve(shape.mesh.indices.size());
@@ -49,6 +50,10 @@ void Model::Load(const std::string& path)
                 // Create My Vertices
                 Vertex& vertex = vertices.emplace_back();
 
+                // Create my Materials
+                // Perhaps you should create rgb channels for each material in common.h or texture.h
+                // maybe use stb_image for that
+                
                 // Positions
                 vertex.position.x = attrib.vertices[3 * size_t(idx.vertex_index) + 0];
                 vertex.position.y = attrib.vertices[3 * size_t(idx.vertex_index) + 1];
@@ -73,12 +78,16 @@ void Model::Load(const std::string& path)
             index_offset += vertCount;
             //tinyobj material
             shape.mesh.material_ids[f];
-            tinyobj::material_t mat;
-            mat.diffuse;
-            mat.emission;
-            mat.normal_texname;
-            mat.roughness;
-           
+
+            mats = materials;
+            tinyobj::material_t& baseColor = materials.emplace_back();
+            
+            // make different material types and add it to the vector
+            baseColor.diffuse = diffuseTexture.rgb;
+            tinyobj::material_t& emission = materials.emplace_back();
+            tinyobj::material_t& normal = materials.emplace_back();
+            tinyobj::material_t& roughness = materials.emplace_back();
+
             // maybe this works for the materials idk
             /*shapes[f].mesh.material_ids[f];*/
         }
